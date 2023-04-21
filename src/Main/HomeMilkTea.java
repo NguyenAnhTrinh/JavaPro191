@@ -646,7 +646,6 @@ public class HomeMilkTea extends javax.swing.JFrame {
         cbMenu.removeAllItems();
         MilkList = (ArrayList<Milk>) XFile.readObject(filePath);
         for (Milk m1 : MilkList) {
-
             cbMenu.addItem(m1.getName());
             menu.put(m1.getID(), m1);
         }
@@ -781,11 +780,9 @@ public class HomeMilkTea extends javax.swing.JFrame {
         checkOp(cbCheese);
         checkOp(cbPopping);
         checkOp(cbPudding);
-
         addCan2();
         fillToTable2();
         saveFile2();
-
         cbBoba.setSelected(false);
         cbCheese.setSelected(false);
         cbEgg.setSelected(false);
@@ -911,18 +908,12 @@ public class HomeMilkTea extends javax.swing.JFrame {
         String id = txtID.getText();
         String name = txtName.getText();
         Double Price = Double.parseDouble(txtPrice.getText());
-//        Date birth = txtDate.getDate();
-
-//        String date = XDate.DateToString(birth);
         Milk c = new Milk(id, name, Price);
         MilkList.add(c);
 
     }
 
     private void addCan2() {
-//           
-//            }
-//            
         String Name = txtID.getText();
 
         String f = cbMenu.getSelectedItem().toString();//Milk name
@@ -936,15 +927,13 @@ public class HomeMilkTea extends javax.swing.JFrame {
                 model.addRow(row);
             }
 
-        }
-//      
+        }   
         Double price = Double.parseDouble(txtPri.getText());
         for (Milk mi : MilkList) {
             if (f.equals(mi.getName())) {
                 Sales s = new Sales(SaleList.size(), mi, (Toping.size() < 0) ? "" : Toping.toString(), mi.getPrice() + (Toping.size() * 10000));
                 SaleList.add(s);
-            }
-//            
+            }         
 
         }
 
